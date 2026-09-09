@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Iconos -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Tipografías: Syne e Inter -->
+  <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
@@ -18,16 +18,11 @@
       font-family: 'Inter', sans-serif;
       background-color: #09090b;
     }
-    h1, h2, h3, .font-heading {
-      font-family: 'Syne', sans-serif;
-    }
-    /* Efectos de luces de fondo (Glows) adaptados a sus fotos verdes */
-    .glow-green {
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(0,0,0,0) 70%);
-    }
-    .glow-cyan {
-      background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, rgba(0,0,0,0) 70%);
-    }
+    h1, h2, h3 { font-family: 'Syne', sans-serif; }
+    
+    .glow-green { background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(0,0,0,0) 70%); }
+    .glow-blue { background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(0,0,0,0) 70%); }
+    
     .glass-card {
       background: rgba(24, 24, 27, 0.65);
       backdrop-filter: blur(12px);
@@ -38,27 +33,26 @@
 </head>
 <body class="text-zinc-200 selection:bg-emerald-600 selection:text-white relative overflow-x-hidden">
 
-  <!-- Luces decorativas fijas de fondo -->
+  <!-- Fondos -->
   <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[700px] h-[500px] glow-green pointer-events-none -z-10"></div>
-  <div class="fixed bottom-0 right-0 w-[600px] h-[600px] glow-cyan pointer-events-none -z-10"></div>
+  <div class="fixed bottom-0 right-0 w-[600px] h-[600px] glow-blue pointer-events-none -z-10"></div>
 
-  <!-- Barra de navegación flotante -->
+  <!-- Navbar -->
   <header class="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
     <nav class="glass-card px-5 py-2.5 rounded-full flex items-center gap-4 md:gap-6 shadow-2xl">
       <a href="#inicio" class="text-xs uppercase tracking-widest text-zinc-400 hover:text-white transition hidden md:block">Inicio</a>
       <a href="#musica" class="text-xs uppercase tracking-widest text-zinc-400 hover:text-white transition">Música</a>
       <a href="#sobre-mi" class="text-xs uppercase tracking-widest text-zinc-400 hover:text-white transition">Bio</a>
-      <a href="#links" class="text-xs uppercase tracking-widest text-zinc-400 hover:text-white transition">Links</a>
+      <a href="#redes" class="text-xs uppercase tracking-widest text-zinc-400 hover:text-white transition">Redes</a>
       <a href="#contacto" class="text-xs uppercase tracking-widest text-emerald-400 hover:text-emerald-300 transition font-medium">Contacto</a>
     </nav>
   </header>
 
-  <!-- SECCIÓN 1: HERO / INICIO -->
+  <!-- SECCIÓN 1: INICIO -->
   <section id="inicio" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 pb-12 relative">
-    
-    <!-- Foto de perfil circular usando la imagen verde que pasaste -->
+    <!-- Foto Perfil (Loopera Verde) -->
     <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-emerald-500/30 mb-6 shadow-[0_0_30px_rgba(16,185,129,0.3)]">
-      <img src="image_e0ba4a.jpg" alt="Chalandres con Loopera" class="w-full h-full object-cover object-top">
+      <img src="image_e12ee6.jpg" alt="Chalandres Loopstation" class="w-full h-full object-cover object-top">
     </div>
 
     <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-4">
@@ -80,111 +74,103 @@
     </a>
   </section>
 
-  <!-- SECCIÓN 2: MÚSICA & LOOPERA -->
+  <!-- SECCIÓN 2: MÚSICA -->
   <section id="musica" class="min-h-screen flex flex-col justify-center items-center px-6 py-20 max-w-4xl mx-auto w-full">
     <div class="text-center mb-10">
       <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight text-white mb-2">Live Sessions</h2>
       <p class="text-zinc-400 text-sm">Creación musical en tiempo real</p>
     </div>
 
-    <!-- Placeholder de Video de YouTube -->
-    <div class="w-full max-w-2xl glass-card p-3 rounded-2xl mb-8 shadow-xl">
-      <div class="relative w-full overflow-hidden" style="padding-top: 56.25%; border-radius: 8px;">
-        <!-- Acá luego reemplazamos el ID por un video real de él -->
-        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/videoseries?list=UULP_q_R3..." title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl items-center mb-10">
+      <!-- Video / Info -->
+      <div class="glass-card p-6 rounded-2xl h-full flex flex-col justify-center order-2 md:order-1">
+        <i data-lucide="audio-lines" class="text-blue-400 w-8 h-8 mb-4"></i>
+        <h3 class="font-bold text-xl text-white mb-2">El Setup</h3>
+        <p class="text-sm text-zinc-400 leading-relaxed">
+          Todo el sonido pasa por la loopera. Capas de guitarra, bajos, sintetizadores y voces creadas de cero frente al público. La magia del error y la improvisación hace que ningún show suene igual al anterior.
+        </p>
       </div>
-    </div>
-
-    <!-- Info del Setup -->
-    <div class="w-full max-w-2xl flex flex-col md:flex-row gap-4">
-      <div class="glass-card p-5 rounded-xl flex-1 hover:border-emerald-500/50 transition">
-        <i data-lucide="audio-lines" class="text-emerald-400 w-6 h-6 mb-3"></i>
-        <h3 class="font-bold text-white mb-1">El Setup</h3>
-        <p class="text-xs text-zinc-400">Todo el sonido pasa por la loopera. Capas de guitarra, bajos, sintetizadores y voces creadas de cero frente al público.</p>
-      </div>
-      <div class="glass-card p-5 rounded-xl flex-1 hover:border-cyan-500/50 transition">
-        <i data-lucide="mic-2" class="text-cyan-400 w-6 h-6 mb-3"></i>
-        <h3 class="font-bold text-white mb-1">En Vivo</h3>
-        <p class="text-xs text-zinc-400">La magia del error y la improvisación. Ningún show suena exactamente igual al anterior.</p>
+      
+      <!-- Foto Guitarra Azul (Nueva) -->
+      <div class="rounded-2xl overflow-hidden glass-card p-2 order-1 md:order-2">
+        <img src="image_e12f61.jpg" alt="Chalandres Guitarra" class="w-full h-auto rounded-xl opacity-90 hover:opacity-100 transition">
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN 3: SOBRE ÉL (BIO & COMEDIA) -->
+  <!-- SECCIÓN 3: BIO -->
   <section id="sobre-mi" class="min-h-screen flex flex-col justify-center items-center px-6 py-20 max-w-4xl mx-auto w-full">
     <div class="text-center mb-10">
       <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight text-white mb-2">Andrés Chaves</h2>
       <p class="text-zinc-400 text-sm">Música, improvisación y escenario</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl items-center">
-      
-      <!-- Collage / Foto de Actuación -->
-      <div class="rounded-2xl overflow-hidden glass-card p-2 transform rotate-1 hover:rotate-0 transition duration-500">
-        <img src="Andres comparte mucho con Björk Guðmundsdóttir; ingenio musical, creatividad, siempre escriben.webp" alt="Andrés Improvisando" class="w-full h-auto rounded-xl opacity-90 hover:opacity-100 transition">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full items-center">
+      <!-- Foto Standup Collage -->
+      <div class="rounded-2xl overflow-hidden glass-card p-2 transform -rotate-1 hover:rotate-0 transition duration-500">
+        <img src="FOTO3.webp" alt="Andrés Improvisando" class="w-full h-auto rounded-xl opacity-90 hover:opacity-100 transition">
       </div>
 
-      <!-- Texto Bio -->
       <div class="glass-card p-8 rounded-2xl h-full flex flex-col justify-center">
         <span class="text-xs text-emerald-400 font-semibold tracking-wider uppercase block mb-2">Junio de 1994</span>
         <h3 class="text-2xl font-bold text-white mb-4">Un artista escénico 360°</h3>
         <p class="text-zinc-300 text-sm leading-relaxed mb-4">
-          Andrés no es solo un músico; es un performer. Con bases fuertes en la <strong>improvisación actoral y el stand-up</strong>, el escenario es su zona de confort. 
+          Andrés no es solo un músico; es un performer. Con bases fuertes en la <strong>improvisación actoral y el stand-up</strong>, el escenario es su zona de confort.
         </p>
         <p class="text-zinc-400 text-sm leading-relaxed mb-6">
-          Ese ingenio creativo que usa para hacer reír, hoy lo aplica para componer y producir música en vivo. Compartiendo esa chispa creativa de armar y desarmar estructuras escénicas.
+          Ese ingenio creativo que usa para hacer reír, hoy lo aplica para componer y producir música en vivo.
         </p>
         
         <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-zinc-800 text-zinc-300 px-3 py-1.5 rounded-full border border-zinc-700">Loop Station</span>
-          <span class="text-xs bg-zinc-800 text-zinc-300 px-3 py-1.5 rounded-full border border-zinc-700">Improvisación</span>
-          <span class="text-xs bg-zinc-800 text-zinc-300 px-3 py-1.5 rounded-full border border-zinc-700">Stand-Up</span>
-          <span class="text-xs bg-zinc-800 text-zinc-300 px-3 py-1.5 rounded-full border border-zinc-700">Guitarra</span>
+          <span class="text-xs bg-zinc-800 text-zinc-300 px-3 py-1.5 rounded-full">Loop Station</span>
+          <span class="text-xs bg-zinc-800 text-zinc-300 px-3 py-1.5 rounded-full">Improvisación</span>
+          <span class="text-xs bg-zinc-800 text-zinc-300 px-3 py-1.5 rounded-full">Stand-Up</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN 4: REDES -->
-  <section id="links" class="min-h-screen flex flex-col justify-center items-center px-6 py-20 max-w-xl mx-auto w-full">
+  <!-- SECCIÓN 4: REDES E INSTAGRAM FEED -->
+  <section id="redes" class="min-h-screen flex flex-col justify-center items-center px-6 py-20 max-w-2xl mx-auto w-full">
     <div class="text-center mb-8">
-      <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight text-white mb-2">Links</h2>
+      <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight text-white mb-2">Comunidad</h2>
       <p class="text-zinc-400 text-sm">Seguí el proceso y las fechas</p>
     </div>
 
-    <div class="w-full flex flex-col gap-4">
-      <a href="https://instagram.com/chalandres" target="_blank" class="glass-card p-5 rounded-xl flex items-center justify-between hover:border-pink-500 hover:bg-zinc-800/80 transition group">
-        <span class="font-medium text-base flex items-center gap-3 text-white">
-          <i data-lucide="instagram" class="w-6 h-6 text-pink-500"></i> Instagram
-        </span>
-        <span class="text-xs text-zinc-500 group-hover:text-white transition">@chalandres</span>
+    <!-- Botones de Redes -->
+    <div class="w-full flex flex-col md:flex-row gap-4 mb-10">
+      <a href="https://instagram.com/chalandres" target="_blank" class="flex-1 glass-card p-4 rounded-xl flex items-center justify-center gap-3 hover:border-pink-500 transition group">
+        <i data-lucide="instagram" class="w-5 h-5 text-pink-500"></i>
+        <span class="text-sm font-medium text-white">@chalandres</span>
       </a>
+      <a href="https://www.youtube.com/chalandres202" target="_blank" class="flex-1 glass-card p-4 rounded-xl flex items-center justify-center gap-3 hover:border-red-500 transition group">
+        <i data-lucide="youtube" class="w-5 h-5 text-red-500"></i>
+        <span class="text-sm font-medium text-white">YouTube</span>
+      </a>
+      <a href="https://x.com/chalandres" target="_blank" class="flex-1 glass-card p-4 rounded-xl flex items-center justify-center gap-3 hover:border-zinc-300 transition group">
+        <i data-lucide="twitter" class="w-5 h-5 text-zinc-300"></i>
+        <span class="text-sm font-medium text-white">X (Twitter)</span>
+      </a>
+    </div>
 
-      <a href="https://www.youtube.com/chalandres202" target="_blank" class="glass-card p-5 rounded-xl flex items-center justify-between hover:border-red-500 hover:bg-zinc-800/80 transition group">
-        <span class="font-medium text-base flex items-center gap-3 text-white">
-          <i data-lucide="youtube" class="w-6 h-6 text-red-500"></i> YouTube
-        </span>
-        <span class="text-xs text-zinc-500 group-hover:text-white transition">chalandres202</span>
-      </a>
-
-      <a href="https://x.com/chalandres" target="_blank" class="glass-card p-5 rounded-xl flex items-center justify-between hover:border-zinc-300 hover:bg-zinc-800/80 transition group">
-        <span class="font-medium text-base flex items-center gap-3 text-white">
-          <i data-lucide="twitter" class="w-6 h-6 text-zinc-300"></i> X (Twitter)
-        </span>
-        <span class="text-xs text-zinc-500 group-hover:text-white transition">@chalandres</span>
-      </a>
+    <!-- WIDGET DE INSTAGRAM FEED -->
+    <div class="w-full glass-card p-4 rounded-2xl overflow-hidden min-h-[300px] flex items-center justify-center text-center">
       
-      <!-- Grid de fotos opcional estilo Instagram usando la imagen que me pasaste -->
-      <div class="mt-4 p-2 glass-card rounded-xl">
-         <img src="image_e0b387.jpg" alt="Feed de Instagram" class="w-full rounded-lg opacity-80 hover:opacity-100 transition">
+      <!-- Script de Elfsight (Carga el feed) -->
+      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+      
+      <!-- ACÁ VA TU CÓDIGO DE ELFSIGHT -->
+      <!-- Ejemplo: va a ser parecido a esto, tenés que cambiar donde dice "TU-ID-DE-ELFSIGHT-ACA" -->
+      <div class="elfsight-app-TU-ID-DE-ELFSIGHT-ACA">
+        <p class="text-zinc-500 text-sm">Cargando feed de Instagram...</p>
       </div>
+
     </div>
   </section>
 
   <!-- SECCIÓN 5: CONTACTO -->
   <section id="contacto" class="min-h-[70vh] flex flex-col justify-center items-center px-6 py-20 max-w-lg mx-auto w-full text-center">
     <div class="glass-card p-8 md:p-12 rounded-3xl w-full border border-emerald-500/20 shadow-2xl relative overflow-hidden">
-      <!-- Glow verde interno -->
       <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 blur-3xl rounded-full"></div>
 
       <div class="w-14 h-14 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto mb-6 border border-emerald-500/20">
@@ -198,32 +184,11 @@
         chalandres@gmail.com
       </a>
     </div>
-
-    <footer class="mt-16 text-zinc-600 text-xs tracking-wide">
-      © 2026 Chalandres.
-    </footer>
   </section>
 
   <!-- Inicializar iconos -->
   <script>
     lucide.createIcons();
   </script>
-
-<!-- Reels/Posts Destacados de Instagram -->
-      <div class="mt-8 flex flex-col md:flex-row justify-center gap-6 w-full">
-        <!-- Reel 1 -->
-        <div class="glass-card p-3 rounded-xl flex justify-center w-full overflow-hidden bg-white/5">
-          <!-- IMPORTANTE: Cambiá el link de abajo por el link real del Reel de tu amigo -->
-          <blockquote class="instagram-media w-full max-w-sm" data-instgrm-permalink="https://www.instagram.com/reel/ID_DEL_VIDEO_ACA/" data-instgrm-version="14" style="background:#000; border:0; border-radius:8px; margin: 0; padding:0;"></blockquote>
-        </div>
-        
-        <!-- Reel 2 (Opcional, si querés poner dos) -->
-        <div class="glass-card p-3 rounded-xl flex justify-center w-full overflow-hidden bg-white/5 hidden md:flex">
-          <blockquote class="instagram-media w-full max-w-sm" data-instgrm-permalink="https://www.instagram.com/reel/OTRO_ID_ACA/" data-instgrm-version="14" style="background:#000; border:0; border-radius:8px; margin: 0; padding:0;"></blockquote>
-        </div>
-      </div>
-
-<script async src="//[www.instagram.com/embed.js](https://www.instagram.com/embed.js)"></script>
-  
 </body>
 </html>
