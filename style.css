@@ -1,0 +1,230 @@
+/* RESET Y VARIABLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #0d0d0d;
+    --text-main: #f5f5f5;
+    --accent: #d4af37; /* Un tono dorado sutil para dar elegancia */
+    --font-headers: 'Cinzel', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* TIPOGRAFIA COMUN */
+h2 {
+    font-family: var(--font-headers);
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Un fondo estrellado/nocturno provisorio, como el de Simba Sax */
+    background: url('https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.65); /* Oscurece la imagen para leer bien el texto */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.logo-title {
+    font-family: var(--font-headers);
+    font-size: 4.5rem;
+    letter-spacing: 8px;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+.social-nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.social-nav a:hover {
+    color: var(--accent);
+}
+
+/* SECCIONES GENERICAS */
+.section {
+    padding: 80px 0;
+    border-bottom: 1px solid #222;
+}
+
+/* ABOUT */
+.bio-text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+.bio-text p {
+    margin-bottom: 20px;
+}
+.bio-text strong, .bio-text em {
+    color: var(--accent);
+}
+
+/* MUSIC */
+.singles-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.single-card {
+    background: #151515;
+    padding: 40px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+.single-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.record-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.single-card h3 {
+    font-family: var(--font-headers);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.single-card p {
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* VENUES (Estilo Supported By) */
+.venues {
+    background-color: #080808;
+}
+
+.venue-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: var(--font-headers);
+    font-size: 1.2rem;
+    color: #aaa;
+}
+
+.venue-list li {
+    letter-spacing: 3px;
+}
+
+/* GALLERY */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 4px;
+    /* Efecto de cohesión: las fotos se ven un poco desaturadas y oscuras por defecto */
+    filter: grayscale(40%) brightness(0.8);
+    transition: all 0.4s ease;
+}
+
+.gallery-img:hover {
+    /* Al pasar el mouse, revelan su color y brillo original */
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.02);
+}
+
+/* FOOTER */
+footer {
+    padding: 60px 0 40px;
+    background-color: #050505;
+}
+
+footer p {
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: var(--accent);
+    color: #000;
+}
+
+.copyright {
+    margin-top: 40px;
+    font-size: 0.75rem;
+}
